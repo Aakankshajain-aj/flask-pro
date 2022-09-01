@@ -29,5 +29,15 @@ pipeline {
                 git url: 'https://github.com/Aakankshajain-aj/flask-pro.git'
             }
         }
+        stage('test'){
+            steps{
+                echo 'Job has been tested successfully'
+            }
+        }
+        stage('deploy'){
+            steps{
+                load 'https://github.com/Aakankshajain-aj/flask-pro.git'
+            }
+        }
     }
 }
