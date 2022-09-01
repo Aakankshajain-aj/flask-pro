@@ -1,20 +1,33 @@
+// pipeline {
+//          agent any
+//          stages {
+//                  stage('Build') {
+//                                 steps {
+//                                     echo 'building your app!'
+//                                 }
+//                  }
+//                  stage('Test') {
+//                                 steps {
+//                                     echo 'testing your app!'
+//                                 }
+//                  }
+//                  stage('Deploy') {
+//                                   steps {
+//                                         echo 'deploying your app!'
+//                                   }
+//                  }
+//               }
+// }
+
+
 pipeline {
-         agent any
-         stages {
-                 stage('Build') {
-                                steps {
-                                    echo 'building your app!'
-                                }
-                 }
-                 stage('Test') {
-                                steps {
-                                    echo 'testing your app!'
-                                }
-                 }
-                 stage('Deploy') {
-                                  steps {
-                                        echo 'deploying your app!'
-                                  }
-                 }
-              }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/Aakankshajain-aj/flask-pro.git', branch: 'main'
+            }
+        }
+    }
 }
